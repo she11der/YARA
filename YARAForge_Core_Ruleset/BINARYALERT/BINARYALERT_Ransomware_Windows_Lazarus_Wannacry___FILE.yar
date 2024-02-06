@@ -20,5 +20,5 @@ rule BINARYALERT_Ransomware_Windows_Lazarus_Wannacry___FILE
 		$a1 = {
         51 53 55 8B 6C 24 10 56 57 6A 20 8B 45 00 8D 75
         04 24 01 0C 01 46 89 45 00 C6 46 FF 03 C6 06 01
-        46 56 E8
+        46 56 E8 }
 }
