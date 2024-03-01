@@ -26,7 +26,3 @@ C7 45 ?? C9 57 C7 45
 C7 45 ?? 8C 4C 6F 61
 
 }
-
-	condition:
-		any of them
-}
