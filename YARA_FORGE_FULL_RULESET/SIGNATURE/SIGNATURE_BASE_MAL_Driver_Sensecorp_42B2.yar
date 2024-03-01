@@ -1,0 +1,27 @@
+rule SIGNATURE_BASE_MAL_Driver_Sensecorp_42B2
+{
+	meta:
+		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - Sense5Ext.sys"
+		author = "Florian Roth"
+		id = "6b64ff77-866b-5d77-b2cf-5e507acc6cb9"
+		date = "2023-06-14"
+		modified = "2023-12-05"
+		reference = "https://github.com/magicsword-io/LOLDrivers"
+		source_url = "https://github.com/Neo23x0/signature-base/blob/c04cde449bdf5fb40bb001fb663d32a70f89abe4/yara/yara-rules_mal_drivers.yar#L41-L58"
+		license_url = "https://github.com/Neo23x0/signature-base/blob/c04cde449bdf5fb40bb001fb663d32a70f89abe4/LICENSE"
+		hash = "42b22faa489b5de936db33f12184f6233198bdf851a18264d31210207827ba25"
+		logic_hash = "72e213913bf4317fa0751775e6a1a82ba2706e79c52fcd3e2c8ca69050e3a9d7"
+		score = 70
+		quality = 85
+		tags = ""
+
+	strings:
+		$ = { 00460069006c0065004400650073006300720069007000740069006f006e[1-8]00530065006e0073006500350020004400720069007600650072 }
+		$ = { 0043006f006d00700061006e0079004e0061006d0065[1-8]00530065006e00730065003500200043004f00520050 }
+		$ = { 00460069006c006500560065007200730069006f006e[1-8]0032002e0035002e0030002e0030 }
+		$ = { 00500072006f006400750063007400560065007200730069006f006e[1-8]0032002e0035002e0030002e0030 }
+		$ = { 004c006500670061006c0043006f0070007900720069006700680074[1-8]0043006f0070007900720069006700680074002000280043002900200032003000320032 }
+
+	condition:
+		all of them
+}
